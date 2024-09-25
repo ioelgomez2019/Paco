@@ -31,15 +31,14 @@ class Cuadronecesidad extends Controllers{
 				$arrData = $this->model->Selectcuanes();
 				for ($i=0; $i < count($arrData); $i++) {
 					if($_SESSION['permisosMod']['u']){
-						
-						$btnEdit = '<button class="btn btn-primary btn-sm btnEditCC" onClick="openModaleditcn('.$arrData[$i]['idNecesidad'].')" title="Editar"><i class="fas fa-pencil-alt"></i></button>';
+						$btnEdit = '<button class="btn btn-primary btn-sm btnEditCC" onClick="openModaleditcn('.$arrData[$i]['idNecesidad'].')" title="Editar"><i class="material-icons">edit</i></button>';
 					}
 					if($_SESSION['permisosMod']['d']){
-						$btnDelete = '<button class="btn btn-danger btn-sm btnDelRol" onClick="fntDelRol('.$arrData[$i]['idNecesidad'].')" title="Eliminar"><i class="far fa-trash-alt"></i></button>
-					</div>';
+						$btnDelete = '<button class="btn btn-danger btn-sm btnDelRol" onClick="fntDelRol('.$arrData[$i]['idNecesidad'].')" title="Eliminar"><i class="material-icons">delete</i></button></div>';
 					}
 					$arrData[$i]['options'] = '<div class="text-center">'.$btnView.' '.$btnEdit.' '.$btnDelete.'</div>';
 				}
+				
 				$datajson =  json_encode($arrData,JSON_UNESCAPED_UNICODE);
 				if(empty($arrData))
 				{

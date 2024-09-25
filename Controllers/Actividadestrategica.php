@@ -30,15 +30,15 @@
 				$arrData = $this->model->Selectactest();
 				for ($i=0; $i < count($arrData); $i++) {
 					if($_SESSION['permisosMod']['u']){
-						$btnView = '<button class="btn btn-info btn-sm btnViewUsuario" onClick="openModalcua('.$arrData[$i]['idcodigo_act'].')" title="Permisos"><i class="app-menu__icon fa fa-shopping-cart"></i></button>';
-						$btnEdit = '<button class="btn btn-primary btn-sm btnEditRol" onClick="fntEditInfoact('.$arrData[$i]['idcodigo_act'].')" title="Editar"><i class="fas fa-pencil-alt"></i></button>';
+						$btnView = '<button class="btn btn-info btn-sm btnViewUsuario" onClick="openModalcua('.$arrData[$i]['idcodigo_act'].')" title="Permisos"><i class="material-icons">shopping_cart</i></button>';
+						$btnEdit = '<button class="btn btn-primary btn-sm btnEditRol" onClick="fntEditInfoact('.$arrData[$i]['idcodigo_act'].')" title="Editar"><i class="material-icons">edit</i></button>';
 					}
 					if($_SESSION['permisosMod']['d']){
-						$btnDelete = '<button class="btn btn-danger btn-sm btnDelRol" onClick="fntDelRol('.$arrData[$i]['idcodigo_act'].')" title="Eliminar"><i class="far fa-trash-alt"></i></button>
-					</div>';
+						$btnDelete = '<button class="btn btn-danger btn-sm btnDelRol" onClick="fntDelRol('.$arrData[$i]['idcodigo_act'].')" title="Eliminar"><i class="material-icons">delete</i></button></div>';
 					}
 					$arrData[$i]['options'] = '<div class="text-center">'.$btnView.' '.$btnEdit.' '.$btnDelete.'</div>';
 				}
+				
 				$datajson =  json_encode($arrData,JSON_UNESCAPED_UNICODE);
 				if(empty($arrData))
 				{

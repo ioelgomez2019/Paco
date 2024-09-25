@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Joel Santos">
     <meta name="theme-color" content="#020659">
-    <link rel="shortcut icon" href="<?= media();?>/images/unaj1.png">
+    
     <title><?= $data['page_tag'] ?></title>
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/main.css">

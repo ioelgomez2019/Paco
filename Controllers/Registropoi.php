@@ -12,32 +12,29 @@ class Registropoi extends Controllers
 		getPermisos(4);
 	}
 	public function getSelectregistrop()
-	{
-		
-		$btnView = '';
-		$btnEdit = '';
-		$btnDelete = '';
-		$arrData = $this->model->Selectregistrop();
-		for ($i = 0; $i < count($arrData); $i++) {
-			if ($_SESSION['permisosMod']['u']) {
-				$btnView = '<button class="btn btn-info btn-sm btnView" onClick="fntGenAct(' . $arrData[$i]['idregistro'] . ')" title="Generar Actividad"><i class="fas fa-eye"></i></button>';
-				$btnEdit = '<button class="btn btn-primary btn-sm btnEditRegistro" onClick="fntEditInfo(' . $arrData[$i]['idregistro'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>';
-			}
-			if ($_SESSION['permisosMod']['d']) {
-				$btnDelete = '<button class="btn btn-danger btn-sm btnDelRegistropoi" onClick="fntDelRegistro(' . $arrData[$i]['idregistro'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>
-					</div>';
-			}
-			$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
-		}
-		$datajson =  json_encode($arrData, JSON_UNESCAPED_UNICODE);
-		if (empty($arrData)) {
-			$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
-		} else {
-			$arrResponse = array('status' => true, 'data' => $arrData);
-		}
-		echo $datajson;
-		die();
-	}
+{
+    $btnView = '';
+    $btnEdit = '';
+    $btnDelete = '';
+    $arrData = $this->model->Selectregistrop();
+    for ($i = 0; $i < count($arrData); $i++) {
+        if ($_SESSION['permisosMod']['u']) {
+            $btnView = '<button class="btn btn-info btn-sm btnView" onClick="fntGenAct(' . $arrData[$i]['idregistro'] . ')" title="Generar Actividad"><i class="material-icons">visibility</i></button>';
+            $btnEdit = '<button class="btn btn-primary btn-sm btnEditRegistro" onClick="fntEditInfo(' . $arrData[$i]['idregistro'] . ')" title="Editar"><i class="material-icons">edit</i></button>';
+        }
+        
+        $arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+    }
+    $datajson = json_encode($arrData, JSON_UNESCAPED_UNICODE);
+    if (empty($arrData)) {
+        $arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
+    } else {
+        $arrResponse = array('status' => true, 'data' => $arrData);
+    }
+    echo $datajson;
+    die();
+}
+
 	
 	public function getSelectallregistropoi(int $idregistropoi)
 	{

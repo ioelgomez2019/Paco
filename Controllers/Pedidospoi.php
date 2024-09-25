@@ -21,14 +21,15 @@ class Pedidospoi extends Controllers
 		$arrData = $this->model->Selectregistrop();
 		for ($i = 0; $i < count($arrData); $i++) {
 			if ($_SESSION['permisosMod']['u']) {
-				$btnView = '<button class="btn btn-info btn-sm btnView" onClick="btnimprimir(' . $arrData[$i]['idregistro'] . ')" title="Generar Actividad"><i class="fas fa-print"></i></button>';
-				$btnEdit = '<button class="btn btn-primary btn-sm btnEditRegistro" onClick="fntviewInfo(' . $arrData[$i]['idregistro'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>';
+				$btnView = '<button class="btn btn-info btn-sm btnView" onClick="btnimprimir(' . $arrData[$i]['idregistro'] . ')" title="Generar Actividad"><i class="material-icons">print</i></button>';
+				$btnEdit = '<button class="btn btn-primary btn-sm btnEditRegistro" onClick="fntviewInfo(' . $arrData[$i]['idregistro'] . ')" title="Editar"><i class="material-icons">edit</i></button>';
 			}
 			if ($_SESSION['permisosMod']['d']) {
-				
+				// Aquí podrías agregar el botón de eliminar si es necesario
 			}
 			$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 		}
+		
 		$datajson =  json_encode($arrData, JSON_UNESCAPED_UNICODE);
 		if (empty($arrData)) {
 			$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');

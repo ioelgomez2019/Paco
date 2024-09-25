@@ -24,28 +24,32 @@ document.addEventListener('DOMContentLoaded', function(){
         ],
         'dom': 'lBfrtip',
         'buttons': [
-            {
-                "extend": "copyHtml5",
-                "text": "<i class='far fa-copy'></i> Copiar",
-                "titleAttr":"Copiar",
-                "className": "btn btn-secondary"
-            },{
-                "extend": "excelHtml5",
-                "text": "<i class='fas fa-file-excel'></i> Excel",
-                "titleAttr":"Esportar a Excel",
-                "className": "btn btn-success"
-            },{
-                "extend": "pdfHtml5",
-                "text": "<i class='fas fa-file-pdf'></i> PDF",
-                "titleAttr":"Esportar a PDF",
-                "className": "btn btn-danger"
-            },{
-                "extend": "csvHtml5",
-                "text": "<i class='fas fa-file-csv'></i> CSV",
-                "titleAttr":"Esportar a CSV",
-                "className": "btn btn-info"
-            }
-        ],
+    {
+        "extend": "copyHtml5",
+        "text": "<i class='material-icons'>content_copy</i> Copiar",
+        "titleAttr": "Copiar",
+        "className": "btn btn-secondary"
+    },
+    {
+        "extend": "excelHtml5",
+        "text": "<i class='material-icons'>table_chart</i> Excel",
+        "titleAttr": "Exportar a Excel",
+        "className": "btn btn-success"
+    },
+    {
+        "extend": "pdfHtml5",
+        "text": "<i class='material-icons'>picture_as_pdf</i> PDF",
+        "titleAttr": "Exportar a PDF",
+        "className": "btn btn-danger"
+    },
+    {
+        "extend": "csvHtml5",
+        "text": "<i class='material-icons'>grid_on</i> CSV",
+        "titleAttr": "Exportar a CSV",
+        "className": "btn btn-info"
+    }
+],
+
         "resonsieve":"true",
         "bDestroy": true,
         "iDisplayLength": 10,
@@ -53,7 +57,9 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 
     if(document.querySelector("#formUsuario")){
+        
         var formUsuario = document.querySelector("#formUsuario");
+        console.log(formUsuario);
         formUsuario.onsubmit = function(e) {
             e.preventDefault();
             var strIdentificacion = document.querySelector('#txtIdentificacion').value;
@@ -83,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function(){
             var formData = new FormData(formUsuario);
             request.open("POST",ajaxUrl,true);
             request.send(formData);
+            
             request.onreadystatechange = function(){
                 if(request.readyState == 4 && request.status == 200){
                     var objData = JSON.parse(request.responseText);

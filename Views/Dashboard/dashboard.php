@@ -19,7 +19,7 @@
     </div>
     <div class="text-end pt-1">
       <p class="text-sm mb-0 text-capitalize">Sistema de Planificacion de Actividades Operativas</p>
-      <h4 class="mb-0">version 0.01</h4>
+      <h4 class="mb-0">version 1.2</h4>
     </div>
   </div>
 
