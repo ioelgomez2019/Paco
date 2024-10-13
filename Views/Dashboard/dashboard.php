@@ -2,35 +2,38 @@
     <main class="app-content">
       <div class="app-title">
         <div>
-          <h1><i class="fa fa-dashboard"></i><?= $data['page_title'] ?></h1>
+          <h1><i class="material-icons">dashboard</i> <?= $data['page_title'] ?></h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
-          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item"><i class="material-icons">home</i></li>
           <li class="breadcrumb-item"><a href="<?= base_url(); ?>/dashboard">Inicio</a></li>
         </ul>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="tile">
-          <div class="card  mb-2">
-  <div class="card-header p-3 pt-2">
-    <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary shadow text-center border-radius-xl mt-n4 position-absolute">
-      <i class="material-icons opacity-10">leaderboard</i>
-    </div>
-    <div class="text-end pt-1">
-      <p class="text-sm mb-0 text-capitalize">Sistema de Planificacion de Actividades Operativas</p>
-      <h4 class="mb-0">version 1.2</h4>
-    </div>
-  </div>
-
-  <hr class="dark horizontal my-0">
-  <div class="card-footer p-3">
-    <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+ </span>El sistema de Planifiacion de Actividades Operativas, es un sistema que puese ser usado para cuqluiera institucion que requiera gestionar sus actividades de manera mas ordenada sin restricciones tanto publicas como privadas DESARROLLADO EN COLABORACION</p>
-  </div>
-</div>
+          <div class="card mb-4">
+            <div class="card-header card-header-primary">
+              <div class="card-icon">
+                <i class="material-icons">leaderboard</i>
+              </div>
+              <div class="text-end">
+                <p class="card-category">Sistema de Planificación de Actividades Operativas</p>
+                <h4 class="card-title">Versión BETA 1.3</h4>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                El Sistema de Planificación de Actividades Operativas es una herramienta diseñada para cualquier institución que necesite gestionar sus actividades de manera más organizada. Su versatilidad permite su uso tanto en organizaciones públicas como privadas. Este sistema ha sido desarrollado en colaboración, optimizando la planificación y el seguimiento de actividades operativas para mejorar la eficiencia institucional.
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <i class="material-icons text-success">check_circle</i>
+                Versión estable y en mejora continua.
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
 <?php footerAdmin($data); ?>
-    
