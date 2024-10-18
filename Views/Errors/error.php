@@ -27,8 +27,9 @@
   <!-- Content -->
   <div class="error__content">
     <div class="error__message message">
-      <h1 class="message__title">Page Not Found</h1>
-      <p class="message__text">We're sorry, the page you were looking for isn't found here. The link you followed may either be broken or no longer exists. Please try again, or take a look at our.</p>
+    <h1 class="message__title">Página No Encontrada</h1>
+<p class="message__text">Lo sentimos, la página que estabas buscando no se encuentra aquí. El enlace que intenta poner está en contruccion o en el peor de los casos no existe</p>
+
     </div>
     <div class="error__nav e-nav">
       <a href="http://sispaco.test//dashboard" target="_blanck" class="e-nav__link"></a>
