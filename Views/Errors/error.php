@@ -32,7 +32,7 @@
 
     </div>
     <div class="error__nav e-nav">
-      <a href="http://sispaco.test//dashboard" target="_blanck" class="e-nav__link"></a>
+      <a href="<?= base_url(); ?>/dashboard" target="_blanck" class="e-nav__link"></a>
     </div>
   </div>
   <!-- END Content -->
